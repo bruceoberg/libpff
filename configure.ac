@@ -1,9 +1,6 @@
-AC_PREREQ([2.71])
+AC_PREREQ([2.72])
 
-AC_INIT(
- [libpff],
- [20240826],
- [joachim.metz@gmail.com])
+AC_INIT([libpff],[20240826],[joachim.metz@gmail.com])
 
 AC_CONFIG_SRCDIR(
  [include/libpff.h.in])
@@ -21,7 +18,10 @@ LT_INIT([win32-dll])
 
 dnl Checks for programs
 AC_PROG_CC
-AC_PROG_GCC_TRADITIONAL
+m4_warn([obsolete],
+[AC_PROG_GCC_TRADITIONAL is obsolete; use AC_PROG_CC
+])dnl
+AC_REQUIRE(AC_PROG_CC)
 AC_PROG_CXX
 AC_PROG_MAKE_SET
 AC_PROG_INSTALL
